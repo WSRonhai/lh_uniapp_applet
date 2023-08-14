@@ -1,0 +1,118 @@
+{
+    "easycom": {
+        "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+    },
+    "pages": [
+        // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path": "pages/home/home",
+            "style": {
+                "navigationBarTitleText": "首页",
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/reservation/home",
+            "style": {
+                "navigationBarTitleText": "预约课程",
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/course/home",
+            "style": {
+                "navigationBarTitleText": "课程表",
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/my/home",
+            "style": {
+                "navigationBarTitleText": "我的",
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/login/home",
+            "style": {
+                "navigationBarTitleText": "登录",
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/login/setting",
+            "style": {
+                "navigationBarTitleText": "设置",
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/uploadImage/uploadImage",
+            "style": {
+                "navigationBarTitleText": "图片上传",
+                "navigationStyle": "custom"
+            }
+        }
+    ],
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "小程序名称",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        // "custom": true,
+        "color": "#333333",
+        "selectedColor": "#E43901",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "iconPath": "static/image/tabbar/home.png",
+                "selectedIconPath": "static/image/tabbar/home-color.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/reservation/home",
+                "iconPath": "static/image/tabbar/show.png",
+                "selectedIconPath": "static/image/tabbar/show-color.png",
+                "text": "预约课程"
+            },
+            {
+                "pagePath": "pages/course/home",
+                "iconPath": "static/image/tabbar/course.png",
+                "selectedIconPath": "static/image/tabbar/course-color.png",
+                "text": "课程表"
+            },
+            {
+                "pagePath": "pages/my/home",
+                "iconPath": "static/image/tabbar/my.png",
+                "selectedIconPath": "static/image/tabbar/my-color.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {},
+    "subPackages": [
+        {
+            "root": "packages/base",
+            "pages": [
+                {
+                    "path": "pages/home/home",
+                    "style": {
+                        "navigationBarTitleText": "基础分包",
+                        "navigationStyle": "custom",
+                        "onReachBottomDistance": 150
+                    }
+                }
+            ]
+        }
+    ],
+    "preloadRule": {
+        // 解决分包过大 加载pages/home/home页面时，加载分包
+        "pages/home/home": {
+            "network": "all",
+            "packages": ["packages/base"]
+        }
+    }
+}
