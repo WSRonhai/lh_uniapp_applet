@@ -1,6 +1,6 @@
-# uni-thl
+# uni-wslh
 
-unip-app 快速开发基础框架模板
+unip-app 隆海快速开发基础框架模板
 
 ## 微信小程序
 
